@@ -33,13 +33,10 @@ function soundEnabled() {
 function loadCue() {
   if (cue || cueLoading) return cueLoading;
   cueLoading = import("https://esm.sh/cuelume@0.2.8")
-    .then(async (mod) => {
+    .then((mod) => {
       mod.setEnabled(soundEnabled());
       mod.setVolume(SOUND.volume);
       mod.setTheme(SOUND.theme);
-      try {
-        await mod.unlock();
-      } catch {}
       cue = mod;
       return mod;
     })
@@ -58,9 +55,34 @@ function play(name, options) {
   }
 }
 
-// první gesto odemkne audio
-window.addEventListener("pointerdown", () => loadCue(), { once: true });
-window.addEventListener("keydown", () => loadCue(), { once: true });
+/* Safari (a iOS) povolí audio jen tehdy, když se AudioContext odemkne SYNCHRONNĚ
+   uvnitř gesta uživatele (klik / klávesa / dotyk). Proto se knihovna načte hned po
+   startu stránky a první gesto ji pouze odemkne – nic se při něm už nenačítá. */
+let unlocked = false;
+function tryUnlock() {
+  if (unlocked || !cue) return;
+  try {
+    const r = cue.unlock();
+    if (r && typeof r.then === "function") {
+      r.then(() => {
+        unlocked = true;
+        removeUnlockListeners();
+      }).catch(() => {});
+    } else {
+      unlocked = true;
+      removeUnlockListeners();
+    }
+  } catch {}
+}
+
+const UNLOCK_EVENTS = ["pointerdown", "pointerup", "mousedown", "touchstart", "touchend", "click", "keydown"];
+function removeUnlockListeners() {
+  UNLOCK_EVENTS.forEach((ev) => window.removeEventListener(ev, tryUnlock, true));
+}
+UNLOCK_EVENTS.forEach((ev) => window.addEventListener(ev, tryUnlock, true));
+
+// předběžné načtení knihovny, ať je při prvním gestu už připravená
+(window.requestIdleCallback || ((fn) => setTimeout(fn, 200)))(() => loadCue());
 
 // hover zvuk na itemech (jen myš, s krátkou prodlevou)
 if (window.matchMedia("(hover: hover)").matches) {
