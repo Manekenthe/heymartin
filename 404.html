@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Martin</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>
+    (function () {
+      var t = "dark";
+      try {
+        var s = localStorage.getItem("theme");
+        if (s === "light" || s === "dark") t = s;
+        else if (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <!-- absolutní cesty, aby 404 fungovala i na nested URL -->
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="b7b14929-9dfd-4b85-a5cb-c69eb1b089a2"></script>
+</head>
+<body>
+  <main class="page" id="main">
+    <section class="intro">
+      <div class="name-block">
+        <h1 class="name">404</h1>
+        <p class="tagline">This page doesn't exist.</p>
+      </div>
+      <a class="link" href="/">
+        <span>Back to home</span>
+        <span class="icon icon-arrow" aria-hidden="true"></span>
+      </a>
+    </section>
+  </main>
+</body>
+</html>

@@ -32,7 +32,9 @@ function soundEnabled() {
 
 function loadCue() {
   if (cue || cueLoading) return cueLoading;
-  cueLoading = import("https://esm.sh/cuelume@0.2.8")
+  // nejdřív vlastní kopie (assets/vendor/cuelume.js); když chybí, záloha z CDN
+  cueLoading = import("./assets/vendor/cuelume.js")
+    .catch(() => import("https://esm.sh/cuelume@0.2.8"))
     .then((mod) => {
       mod.setEnabled(soundEnabled());
       mod.setVolume(SOUND.volume);

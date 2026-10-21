@@ -572,3 +572,40 @@ button {
     animation: none;
   }
 }
+
+/* ---------- Přístupnost ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 4px 8px;
+  background: var(--hover);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--headline);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.footer-note {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}

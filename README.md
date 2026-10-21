@@ -11,6 +11,9 @@ Osobní portfolio – statický web (čisté HTML + CSS + JS, žádný build, ž
 ├── index.html      # obsah stránky
 ├── style.css       # design tokeny (dark/light), typografie, layout, komponenty
 ├── script.js       # přepínač tématu, klávesa „C“ = kopie e-mailu, ticker, zvuky
+├── 404.html        # stránka pro neexistující adresy
+├── robots.txt      # pravidla pro vyhledávače
+├── sitemap.xml     # mapa webu (1 stránka)
 ├── CNAME           # vlastní doména pro GitHub Pages (heymartin.xyz)
 ├── .nojekyll       # vypne Jekyll, GitHub Pages servíruje soubory tak, jak jsou
 └── assets/
@@ -42,7 +45,9 @@ Osobní portfolio – statický web (čisté HTML + CSS + JS, žádný build, ž
 - **Klávesa `C`** kdekoliv na webu zkopíruje e-mail a zobrazí „Copied! ✓“ (na dotykových zařízeních tlačítko s ikonou kopírování). Nereaguje na `Ctrl/Cmd + C`.
 - **Hover na položce** – rozbalí se popis a zobrazí se linka vlevo.
 - **Ticker s logy** – směr doleva, při najetí zpomalí na 0.5×.
-- **Zvuky** – knihovna [cuelume](https://github.com/danielwh2/cuelume) načtená z esm.sh až po první interakci; pokud se nenačte, web funguje normálně bez zvuku.
+- **Přístupnost** – skip link, popisky „opens in a new tab“ pro čtečky, respektuje `prefers-reduced-motion`.
+- **SEO / sdílení** – Open Graph + Twitter card, JSON-LD (Person), sitemap, robots.
+- **Zvuky** – knihovna [cuelume](https://github.com/danielwh2/cuelume) načtená z esm.sh až po první interakci; pokud se nenačte, web funguje normálně bez zvuku. Volitelně lze knihovnu hostovat lokálně v `assets/vendor/cuelume.js` (skript ji zkusí načíst jako první, CDN je záloha).
 - Písmo **Geist Mono** je self-hosted (`assets/fonts/`, řezy Regular a Medium), žádné externí fonty.
 
 ## Nasazení na GitHub Pages
