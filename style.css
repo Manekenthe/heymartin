@@ -394,7 +394,7 @@ button {
 /* ikona + indikátor tvoří skupinu s gapem 4px; indikátor visí vlevo mimo sloupec */
 .indicator {
   position: absolute;
-  left: -6px; /* 2px šířka + 4px gap */
+  left: -14px; /* 2px šířka + 4px gap */
   top: 0;
   width: 2px;
   height: 24px;
