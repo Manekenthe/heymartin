@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Martin — UX/UI Designer &amp; Engineer</title>
+  <meta name="description" content="Martin, Prague based UX/UI designer and design engineer. Selected work, stack, writing and more.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://heymartin.xyz/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Martin — UX/UI Designer &amp; Engineer">
+  <meta property="og:description" content="Prague based UX/UI Designer &amp; Engineer. For more than 18 years crafting digital products that balance beauty and usability.">
+  <meta property="og:url" content="https://heymartin.xyz/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%80%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    /* nastaví téma před vykreslením, aby web neprobliknul */
+    (function () {
+      var t = "dark";
+      try {
+        var s = localStorage.getItem("theme");
+        if (s === "light" || s === "dark") t = s;
+        else if (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+
+    <header class="top">
+      <img class="avatar" src="assets/profile-photo/profile-photo.avif" alt="Martin" width="64" height="64" decoding="async">
+      <button class="theme-switch" id="theme-switch" type="button" aria-label="Switch to light theme">
+        <span class="icon icon-theme" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <section class="intro">
+      <div class="name-block">
+        <h1 class="name">Martin <span aria-hidden="true">👀</span></h1>
+        <p class="tagline">Prague based UX/UI Designer &amp; Engineer</p>
+      </div>
+      <p class="bio">For more than 18 years, I've been crafting digital products that balance beauty and usability. I now work as both a UX/UI designer and design engineer, using Figma, Framer, Cursor, and vibe coding to design and build products end to end - for clients from startups to global brands like Milka, Sephora, Canadian Medical, EUC, Pepsi, and Avast.</p>
+      <div class="copy-hint" id="copy-hint">
+        <p class="copy-line">
+          <span class="when-hover">Press</span><span class="when-touch">Tap</span>
+          <button class="kbd" id="copy-btn" type="button" aria-label="Copy my email"><span class="when-hover">C</span><span class="icon icon-copy when-touch" aria-hidden="true"></span></button>
+          to copy my email.
+        </p>
+        <p class="copied-line" aria-live="polite">Copied! ✓</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="h-brands">
+      <h2 class="section-title" id="h-brands">Brands</h2>
+      <div class="ticker" id="ticker">
+        <div class="ticker-track">
+          <ul class="ticker-set">
+            <li><img src="assets/logos/01.sephora.svg" alt="Sephora" width="139" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/02.canadian-medical.svg" alt="Canadian Medical" width="79" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/03.okd.svg" alt="OKD" width="82" height="19" loading="lazy"></li>
+            <li><img src="assets/logos/04.unicredit-bank.svg" alt="UniCredit Bank" width="129" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/05.datacruit.svg" alt="Datacruit" width="106" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/06.avast.svg" alt="Avast" width="59" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/07.eon.svg" alt="E.ON" width="63" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/08.milka.svg" alt="Milka" width="38" height="20" loading="lazy"></li>
+          </ul>
+          <ul class="ticker-set" aria-hidden="true">
+            <li><img src="assets/logos/01.sephora.svg" alt="" width="139" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/02.canadian-medical.svg" alt="" width="79" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/03.okd.svg" alt="" width="82" height="19" loading="lazy"></li>
+            <li><img src="assets/logos/04.unicredit-bank.svg" alt="" width="129" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/05.datacruit.svg" alt="" width="106" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/06.avast.svg" alt="" width="59" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/07.eon.svg" alt="" width="63" height="18" loading="lazy"></li>
+            <li><img src="assets/logos/08.milka.svg" alt="" width="38" height="20" loading="lazy"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+      <section class="section" aria-labelledby="h-work">
+        <h2 class="section-title" id="h-work">Selected Work</h2>
+        <div class="items">
+        <a class="item" href="https://monods.vercel.app" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/01.mono.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Møno (wip)</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Building Mono, a minimalist design system with accessible React and Tailwind components you install as source</span></span>
+        </a>
+        <a class="item" href="https://addtostacked.framer.website" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/02.stacked.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Stacked (850+ tools collected)</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Design system and Framer build for Stacked, a curated tools directory, plus edited video showcases with cinematic zooms.</span></span>
+        </a>
+        <a class="item" href="https://apps.apple.com/cz/app/mycanadian/id1520174375" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/03.myCanadian.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">myCanadian</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">UX/UI design of the myCanadian mobile app.</span></span>
+        </a>
+        <a class="item" href="https://apps.apple.com/de/app/pr%C3%A1ce-za-rohem/id1137128105" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/04.pzr.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Práce za rohem</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Complete rebrand and app redesign for Práce za rohem, with custom illustrations and a consistent design language</span></span>
+        </a>
+        <a class="item" href="https://apps.apple.com/cz/app/seduo/id1452881860" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/05.seduo.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Seduo</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Mobile app design from concept to launch for Seduo, plus new web features and a full redesign concept</span></span>
+        </a>
+        <a class="item" href="https://www.medicalc.cz/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/06.medicalc.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Medicalc</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">UX/UI design of the Medicalc website and interface updates for its hospital information system.</span></span>
+        </a>
+        <a class="item" href="https://www.okd.cz/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/selected-work/07.okd.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">OKD</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">UX/UI design of the corporate website for OKD, the Czech Republic&#x27;s sole coal mining company.</span></span>
+        </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="h-stack">
+        <h2 class="section-title" id="h-stack">Stack</h2>
+        <ul class="stack">
+          <li class="stack-item" tabindex="0" aria-label="Figma">
+            <img src="assets/stack/01.figma.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Figma</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Framer">
+            <img src="assets/stack/02.framer.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Framer</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Sketch">
+            <img src="assets/stack/03.sketch.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Sketch</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Paper">
+            <img src="assets/stack/04.paper.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Paper</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Rive">
+            <img src="assets/stack/05.rive.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Rive</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Pencil">
+            <img src="assets/stack/06.pencil.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Pencil</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Adobe">
+            <img src="assets/stack/07.adobe.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Adobe</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Miro">
+            <img src="assets/stack/08.miro.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Miro</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Claude">
+            <img src="assets/stack/09.claude.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Claude</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Muse">
+            <img src="assets/stack/10.muse.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Muse</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Vercel">
+            <img src="assets/stack/11.vercel.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Vercel</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Blender">
+            <img src="assets/stack/12.blender.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Blender</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="CleanShot X">
+            <img src="assets/stack/13.cleanshotx.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">CleanShot X</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="tldraw">
+            <img src="assets/stack/14.tldraw.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">tldraw</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="GitHub">
+            <img src="assets/stack/15.github.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">GitHub</span>
+          </li>
+          <li class="stack-item" tabindex="0" aria-label="Spotify">
+            <img src="assets/stack/16.spotify.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="tooltip" role="tooltip">Spotify</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="h-writing">
+        <h2 class="section-title" id="h-writing">Writing</h2>
+        <div class="items">
+        <a class="item" href="https://readfragments.substack.com/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/writing/01.fragments.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Fragments</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Quick fragments from the world of design, tech</span></span>
+        </a>
+        <a class="item" href="https://readunmasked.substack.com/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/writing/02.unMasked.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">unMasked</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Written interview series with creative people, going beyond work to life and lessons learned</span></span>
+        </a>
+        <a class="item" href="https://addtostack.substack.com/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/writing/03.stacked-notes.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Stacked Notes</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Tool showcases - cinematic videos, one tool at a time.</span></span>
+        </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="h-played">
+        <h2 class="section-title" id="h-played">Last Played</h2>
+        <div class="items">
+        <a class="item" href="https://open.spotify.com/album/4yJ6xcyg1Rv7htmNxwSdX8?si=pbjzcDJXQcKI-q5gX9acGg" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-played/01.leyla-ebrahimi.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Star</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Leyla Ebrahimi · 2026 · Deerfield Records / Interscope Records</span></span>
+        </a>
+        <a class="item" href="https://open.spotify.com/album/604KxCjle0KCw0VXdoMNgj?si=6lpADZd2RICuDZvSia3Slw" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-played/02.sophia-stel.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">The Greatest Album Of All Time</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Sophia Stel · 2026 · A24 Music</span></span>
+        </a>
+        <a class="item" href="https://open.spotify.com/album/5sZ0QkaVO3XjE41k8EuPc0?si=AljkaJHGT3qOyEuRO8HSLg" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-played/03.max-richter.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">While The Flood Rages</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Max Richter · 2026 · Universal Music Operations Limited</span></span>
+        </a>
+        <a class="item" href="https://open.spotify.com/album/5M5bSQrYj8HvIYbJmoVR7C?si=BVpz1xmsQUG3Gi-KFk21TQ" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-played/04.speedy-j.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Second Office</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Speedy J, Rødhåd, The Department Of Almost · 2026 · WSWNG</span></span>
+        </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="h-watched">
+        <h2 class="section-title" id="h-watched">Last Watched</h2>
+        <div class="items">
+        <a class="item" href="https://letterboxd.com/film/hallowarrior/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-watched/01.hallowarrior.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Hallowarrior</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Ben Sottak · 2026 · Horror / Thriller</span></span>
+        </a>
+        <a class="item" href="https://letterboxd.com/film/crawlers-2026/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-watched/02.crawlers.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Crawlers</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Ángel Gómez Hernández · 2026 · Horror / Thriller</span></span>
+        </a>
+        <a class="item" href="https://letterboxd.com/film/whalefall/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-watched/03.whalefall.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Whalefall</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Brian Duffield · 2026 · Thriller</span></span>
+        </a>
+        <a class="item" href="https://letterboxd.com/film/love-of-your-life/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/last-watched/04.love-of-your-life.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Love of Your Life</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">by Rachel Morrison · 2026 · Romance / Drama</span></span>
+        </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="h-news">
+        <h2 class="section-title" id="h-news">Latest News</h2>
+        <div class="items">
+        <a class="item" href="https://www.threads.com/share/ECsdDLg9z/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/latest-news/01.motion-logo.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Motion UI Gallery</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Motion released a gallery component for React. 8 arrangements, 2D and 3D, all transitioning into each other. No webgl.</span></span>
+        </a>
+        <a class="item" href="https://www.threads.com/share/E_l0AXc7j/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/latest-news/02.tesla-logo.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">New Tesla Roadster</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Tesla unveiled the new Roadster. Hidden headlights, a full-length taillight, and windows tinted like spacesuit visors.</span></span>
+        </a>
+        <a class="item" href="https://www.threads.com/share/D9BzUFZTp/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/latest-news/03.figma-logo.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Figma Specs</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Figma Specs, from Config India. Markdown on the canvas, next to your designs and code layers.</span></span>
+        </a>
+        <a class="item" href="https://www.threads.com/share/GhUomuwox/" target="_blank" rel="noopener noreferrer">
+          <span class="item-row">
+            <span class="indicator" aria-hidden="true"></span>
+            <img class="item-icon" src="assets/latest-news/04.pentagram-logo.avif" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="item-title">Pentagram x Doha Biennial</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </span>
+          <span class="item-desc-wrap"><span class="item-desc">Pentagram&#x27;s identity for design Doha Biennial puts arabic and english on equal footing. Stretched strokes link everything like a map. Opens november 5.</span></span>
+        </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="h-elsewhere">
+        <h2 class="section-title" id="h-elsewhere">Elsewhere</h2>
+        <div class="links">
+          <a class="link" href="https://x.com/manekenthe" target="_blank" rel="noopener noreferrer">
+            <span class="icon icon-x" aria-hidden="true"></span>
+            <span>X (Twitter)</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="link" href="https://www.threads.com/@manekenthe" target="_blank" rel="noopener noreferrer">
+            <span class="icon icon-threads" aria-hidden="true"></span>
+            <span>Threads</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="link" href="https://www.instagram.com/manekenthe/" target="_blank" rel="noopener noreferrer">
+            <span class="icon icon-instagram" aria-hidden="true"></span>
+            <span>Instagram</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </a>
+          <a class="link" href="https://letterboxd.com/manekenthe/" target="_blank" rel="noopener noreferrer">
+            <span class="icon icon-letterboxd" aria-hidden="true"></span>
+            <span>Letterboxd</span>
+            <span class="icon icon-arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+      </section>
+
+    <footer class="footer">© 2026. All rights reserved.</footer>
+
+  </main>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
