@@ -14,6 +14,7 @@ Osobní portfolio – statický web (čisté HTML + CSS + JS, žádný build, ž
 ├── CNAME           # vlastní doména pro GitHub Pages (heymartin.xyz)
 ├── .nojekyll       # vypne Jekyll, GitHub Pages servíruje soubory tak, jak jsou
 └── assets/
+    ├── fonts/          # Geist Mono (woff2)
     ├── icons/          # arrow, moon, sun, x, threads, instagram, letterboxd (SVG)
     ├── logos/          # loga do tickeru (SVG)
     ├── profile-photo/
@@ -42,7 +43,7 @@ Osobní portfolio – statický web (čisté HTML + CSS + JS, žádný build, ž
 - **Hover na položce** – rozbalí se popis a zobrazí se linka vlevo.
 - **Ticker s logy** – směr doleva, při najetí zpomalí na 0.5×.
 - **Zvuky** – knihovna [cuelume](https://github.com/danielwh2/cuelume) načtená z esm.sh až po první interakci; pokud se nenačte, web funguje normálně bez zvuku.
-- Písmo **Geist Mono** se načítá z Google Fonts.
+- Písmo **Geist Mono** je self-hosted (`assets/fonts/`, řezy Regular a Medium), žádné externí fonty.
 
 ## Nasazení na GitHub Pages
 
