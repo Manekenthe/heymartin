@@ -624,3 +624,62 @@ button {
 .rating + .icon-arrow {
   margin-left: 8px;
 }
+/* ---------- Visited: fotky při hoveru (2 karty 3:4, zrcadlově pootočené) ----------
+   Jen na zařízeních s hoverem a od šířky 820 px (karty přesahují sloupec obsahu). */
+.photos {
+  display: none;
+}
+
+@media (hover: hover) and (min-width: 820px) {
+  .stack-item:hover,
+  .stack-item:focus-visible {
+    z-index: 20; /* karty se zobrazí nad sousedními ikonami */
+  }
+
+  .photos {
+    --photo-w: 118px;
+    --photo-h: 157.33px; /* 3:4 */
+    --photo-angle: 6deg;
+    --photo-radius: 8px;
+
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 13.74px); /* nejnižší roh karty = 8px nad ikonou (8 + 5.74 přesah rotace) */
+    width: 0;
+    height: var(--photo-h);
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    transition: opacity 0.18s var(--ease-in), transform 0.18s var(--ease-in);
+  }
+
+  .stack-item:hover .photos,
+  .stack-item:focus-visible .photos {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.28s var(--ease-out), transform 0.28s var(--ease-out);
+  }
+
+  .stack-item .photos img {
+    position: absolute;
+    bottom: 0;
+    width: var(--photo-w);
+    height: var(--photo-h);
+    max-width: none;
+    border: 0;
+    border-radius: var(--photo-radius);
+    object-fit: cover;
+    background: var(--hover);
+  }
+
+  .stack-item .photos img:first-child {
+    right: 0; /* levá karta: končí uprostřed ikony */
+    transform: rotate(calc(var(--photo-angle) * -1));
+  }
+
+  .stack-item .photos img:last-child {
+    left: 0; /* pravá karta: začíná uprostřed ikony, překrývá levou */
+    transform: rotate(var(--photo-angle));
+  }
+}
