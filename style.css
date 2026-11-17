@@ -679,7 +679,7 @@ button {
   }
 
   .stack-item .photos img:last-child {
-    left: -6; /* pravá karta: začíná uprostřed ikony, překrývá levou */
+    left: 0; /* pravá karta: začíná uprostřed ikony, překrývá levou */
     transform: rotate(var(--photo-angle));
   }
 }
