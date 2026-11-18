@@ -674,12 +674,12 @@ button {
   }
 
   .stack-item .photos img:first-child {
-    right: -16px; /* levá karta: končí uprostřed ikony */
+    right: -14px; /* levá karta: končí uprostřed ikony */
     transform: rotate(calc(var(--photo-angle) * -1));
   }
 
   .stack-item .photos img:last-child {
-    left: -16px; /* pravá karta: začíná uprostřed ikony, překrývá levou */
+    left: -14px; /* pravá karta: začíná uprostřed ikony, překrývá levou */
     transform: rotate(var(--photo-angle));
   }
 }
