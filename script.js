@@ -17,6 +17,16 @@ const SOUND = {
   volume: 0.6,
   theme: "press", // "default" | "mech" | "bubble" | "press"
   hoverDelay: 70, // ms – přejetí myší přes položku zůstane tiché
+  // Vyvážení hlasitosti jednotlivých zvuků (0–1). V knihovně mají zvuky různou sílu,
+  // např. "navigate" je ~4× hlasitější než hover "open" – tady se to srovná.
+  // Chceš nahlas/ztlumit? Změň číslo. 1 = bez úprav.
+  levels: {
+    open: 1, // hover na položce
+    select: 0.6, // hover na ikoně ve Stacku / Visited
+    navigate: 0.25, // klik na odkaz
+    success: 0.4, // zkopírování e-mailu
+    toggle: 1, // přepnutí tématu
+  },
 };
 
 let cue = null; // { play, setEnabled, ... }
@@ -46,14 +56,16 @@ function loadCue() {
   return cueLoading;
 }
 
-function play(name, options) {
+function play(name, options = {}) {
   if (!soundEnabled() || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const volume = (options.volume ?? 1) * (SOUND.levels[name] ?? 1);
+  const opts = { ...options, volume };
   if (cue) {
     try {
-      cue.play(name, options);
+      cue.play(name, opts);
     } catch {}
   } else {
-    loadCue()?.then((m) => m && m.play(name, options));
+    loadCue()?.then((m) => m && m.play(name, opts));
   }
 }
 
@@ -86,22 +98,44 @@ UNLOCK_EVENTS.forEach((ev) => window.addEventListener(ev, tryUnlock, true));
 // předběžné načtení knihovny, ať je při prvním gestu už připravená
 (window.requestIdleCallback || ((fn) => setTimeout(fn, 200)))(() => loadCue());
 
-// hover zvuk na itemech (jen myš, s krátkou prodlevou)
+/* Hover zvuky – jen při SKUTEČNÉM pohybu myši.
+   Při scrollu nebo posunu layoutu pod stojícím kurzorem prohlížeč pošle "pointerenter"
+   na prvek, který se ocitne pod kurzorem – bez téhle kontroly by pak zvuky hrály samy. */
 if (window.matchMedia("(hover: hover)").matches) {
-  document.querySelectorAll(".item").forEach((el) => {
-    let t;
-    el.addEventListener("pointerenter", () => {
-      t = setTimeout(() => play("open", { emphasis: "subtle" }), SOUND.hoverDelay);
+  let lastX = -1;
+  let lastY = -1;
+  let lastRealMove = -Infinity;
+  window.addEventListener(
+    "pointermove",
+    (e) => {
+      if (e.pointerType !== "mouse") return;
+      if (e.clientX !== lastX || e.clientY !== lastY) lastRealMove = performance.now();
+      lastX = e.clientX;
+      lastY = e.clientY;
+    },
+    { passive: true, capture: true }
+  );
+
+  const hoverSound = (selector, name, options) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      let t;
+      el.addEventListener("pointerenter", (e) => {
+        if (e.pointerType !== "mouse" || !e.isTrusted) return;
+        const entered = performance.now();
+        clearTimeout(t);
+        t = setTimeout(() => {
+          if (!cue) return; // knihovna ještě není načtená → žádný opožděný zvuk
+          if (lastRealMove < entered - 40) return; // kurzor stál, pohnula se jen stránka
+          if (!el.matches(":hover")) return;
+          play(name, options);
+        }, SOUND.hoverDelay);
+      });
+      el.addEventListener("pointerleave", () => clearTimeout(t));
     });
-    el.addEventListener("pointerleave", () => clearTimeout(t));
-  });
-  document.querySelectorAll(".stack-item").forEach((el) => {
-    let t;
-    el.addEventListener("pointerenter", () => {
-      t = setTimeout(() => play("select", { emphasis: "subtle", volume: 0.5 }), SOUND.hoverDelay);
-    });
-    el.addEventListener("pointerleave", () => clearTimeout(t));
-  });
+  };
+
+  hoverSound(".item", "open", { emphasis: "subtle" });
+  hoverSound(".stack-item", "select", { emphasis: "subtle" });
 }
 document.querySelectorAll(".item, .link").forEach((el) => el.addEventListener("click", () => play("navigate")));
 
