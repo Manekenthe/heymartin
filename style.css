@@ -682,7 +682,9 @@ button {
     left: -14px; /* pravá karta: začíná uprostřed ikony, překrývá levou */
     transform: rotate(var(--photo-angle));
   }
-   /* ---------- Firmy v textu (ikona 14×14 + název) ---------- */
+}
+
+/* ---------- Firmy v textu (ikona 14×14 + název) ---------- */
 .company {
   display: inline-flex;
   align-items: center;
@@ -700,5 +702,4 @@ button {
   border: 1px solid var(--border); /* stejný stroke jako ikony ve Stacku, Visited atd. */
   border-radius: 4px;
   object-fit: cover;
-}
 }
