@@ -682,4 +682,23 @@ button {
     left: -14px; /* pravá karta: začíná uprostřed ikony, překrývá levou */
     transform: rotate(var(--photo-angle));
   }
+   /* ---------- Firmy v textu (ikona 14×14 + název) ---------- */
+.company {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* ikona → název */
+  height: 20px;
+  vertical-align: top;
+  white-space: nowrap; /* ikona a název se nikdy nerozdělí na dva řádky */
+  color: var(--headline); /* #FAFAFA v dark, #0A0A0A v light; zbytek textu zůstává muted */
+}
+
+.company img {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--border); /* stejný stroke jako ikony ve Stacku, Visited atd. */
+  border-radius: 4px;
+  object-fit: cover;
+}
 }
